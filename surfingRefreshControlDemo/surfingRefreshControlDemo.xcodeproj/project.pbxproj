@@ -1,0 +1,332 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F441994C1D0BF05F00662A23 /* surfing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F441994B1D0BF05F00662A23 /* surfing.jpg */; };
+		F441997A1D0D7C6600662A23 /* polygon.plist in Resources */ = {isa = PBXBuildFile; fileRef = F44199741D0D7C6600662A23 /* polygon.plist */; };
+		F441997B1D0D7C6600662A23 /* square.plist in Resources */ = {isa = PBXBuildFile; fileRef = F44199751D0D7C6600662A23 /* square.plist */; };
+		F441997C1D0D7C6600662A23 /* storehouserefresh.plist in Resources */ = {isa = PBXBuildFile; fileRef = F44199761D0D7C6600662A23 /* storehouserefresh.plist */; };
+		F441997D1D0D7C6600662A23 /* surfing.plist in Resources */ = {isa = PBXBuildFile; fileRef = F44199771D0D7C6600662A23 /* surfing.plist */; };
+		F441997E1D0D7C6600662A23 /* SurfingBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44199781D0D7C6600662A23 /* SurfingBarItem.swift */; };
+		F441997F1D0D7C6600662A23 /* SurfingRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44199791D0D7C6600662A23 /* SurfingRefreshControl.swift */; };
+		F4EEEF371D0A3D5C00FA3BB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EEEF361D0A3D5C00FA3BB4 /* AppDelegate.swift */; };
+		F4EEEF3E1D0A3D5D00FA3BB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EEEF3D1D0A3D5D00FA3BB4 /* Assets.xcassets */; };
+		F4EEEF411D0A3D5D00FA3BB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EEEF3F1D0A3D5D00FA3BB4 /* LaunchScreen.storyboard */; };
+		F4EEEF571D0A3EB200FA3BB4 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EEEF561D0A3EB200FA3BB4 /* DemoViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F441994B1D0BF05F00662A23 /* surfing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = surfing.jpg; sourceTree = "<group>"; };
+		F44199741D0D7C6600662A23 /* polygon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = polygon.plist; sourceTree = "<group>"; };
+		F44199751D0D7C6600662A23 /* square.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = square.plist; sourceTree = "<group>"; };
+		F44199761D0D7C6600662A23 /* storehouserefresh.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = storehouserefresh.plist; sourceTree = "<group>"; };
+		F44199771D0D7C6600662A23 /* surfing.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = surfing.plist; sourceTree = "<group>"; };
+		F44199781D0D7C6600662A23 /* SurfingBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurfingBarItem.swift; sourceTree = "<group>"; };
+		F44199791D0D7C6600662A23 /* SurfingRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurfingRefreshControl.swift; sourceTree = "<group>"; };
+		F4EEEF331D0A3D5C00FA3BB4 /* surfingRefreshControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = surfingRefreshControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4EEEF361D0A3D5C00FA3BB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4EEEF3D1D0A3D5D00FA3BB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4EEEF401D0A3D5D00FA3BB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4EEEF421D0A3D5D00FA3BB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4EEEF561D0A3EB200FA3BB4 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4EEEF301D0A3D5C00FA3BB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F44199721D0D7C6600662A23 /* SurfingRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				F44199731D0D7C6600662A23 /* Plists */,
+				F44199781D0D7C6600662A23 /* SurfingBarItem.swift */,
+				F44199791D0D7C6600662A23 /* SurfingRefreshControl.swift */,
+			);
+			path = SurfingRefreshControl;
+			sourceTree = "<group>";
+		};
+		F44199731D0D7C6600662A23 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				F44199741D0D7C6600662A23 /* polygon.plist */,
+				F44199751D0D7C6600662A23 /* square.plist */,
+				F44199761D0D7C6600662A23 /* storehouserefresh.plist */,
+				F44199771D0D7C6600662A23 /* surfing.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		F4EEEF2A1D0A3D5C00FA3BB4 = {
+			isa = PBXGroup;
+			children = (
+				F4EEEF351D0A3D5C00FA3BB4 /* surfingRefreshControlDemo */,
+				F4EEEF341D0A3D5C00FA3BB4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4EEEF341D0A3D5C00FA3BB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4EEEF331D0A3D5C00FA3BB4 /* surfingRefreshControlDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4EEEF351D0A3D5C00FA3BB4 /* surfingRefreshControlDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F44199721D0D7C6600662A23 /* SurfingRefreshControl */,
+				F4EEEF361D0A3D5C00FA3BB4 /* AppDelegate.swift */,
+				F4EEEF561D0A3EB200FA3BB4 /* DemoViewController.swift */,
+				F441994B1D0BF05F00662A23 /* surfing.jpg */,
+				F4EEEF3D1D0A3D5D00FA3BB4 /* Assets.xcassets */,
+				F4EEEF3F1D0A3D5D00FA3BB4 /* LaunchScreen.storyboard */,
+				F4EEEF421D0A3D5D00FA3BB4 /* Info.plist */,
+			);
+			path = surfingRefreshControlDemo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4EEEF321D0A3D5C00FA3BB4 /* surfingRefreshControlDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4EEEF451D0A3D5D00FA3BB4 /* Build configuration list for PBXNativeTarget "surfingRefreshControlDemo" */;
+			buildPhases = (
+				F4EEEF2F1D0A3D5C00FA3BB4 /* Sources */,
+				F4EEEF301D0A3D5C00FA3BB4 /* Frameworks */,
+				F4EEEF311D0A3D5C00FA3BB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = surfingRefreshControlDemo;
+			productName = surfingRefreshControlDemo;
+			productReference = F4EEEF331D0A3D5C00FA3BB4 /* surfingRefreshControlDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4EEEF2B1D0A3D5C00FA3BB4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				TargetAttributes = {
+					F4EEEF321D0A3D5C00FA3BB4 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = F4EEEF2E1D0A3D5C00FA3BB4 /* Build configuration list for PBXProject "surfingRefreshControlDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4EEEF2A1D0A3D5C00FA3BB4;
+			productRefGroup = F4EEEF341D0A3D5C00FA3BB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4EEEF321D0A3D5C00FA3BB4 /* surfingRefreshControlDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4EEEF311D0A3D5C00FA3BB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F441997D1D0D7C6600662A23 /* surfing.plist in Resources */,
+				F441994C1D0BF05F00662A23 /* surfing.jpg in Resources */,
+				F441997C1D0D7C6600662A23 /* storehouserefresh.plist in Resources */,
+				F441997B1D0D7C6600662A23 /* square.plist in Resources */,
+				F4EEEF411D0A3D5D00FA3BB4 /* LaunchScreen.storyboard in Resources */,
+				F4EEEF3E1D0A3D5D00FA3BB4 /* Assets.xcassets in Resources */,
+				F441997A1D0D7C6600662A23 /* polygon.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4EEEF2F1D0A3D5C00FA3BB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F441997F1D0D7C6600662A23 /* SurfingRefreshControl.swift in Sources */,
+				F4EEEF571D0A3EB200FA3BB4 /* DemoViewController.swift in Sources */,
+				F4EEEF371D0A3D5C00FA3BB4 /* AppDelegate.swift in Sources */,
+				F441997E1D0D7C6600662A23 /* SurfingBarItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F4EEEF3F1D0A3D5D00FA3BB4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4EEEF401D0A3D5D00FA3BB4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4EEEF431D0A3D5D00FA3BB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F4EEEF441D0A3D5D00FA3BB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4EEEF461D0A3D5D00FA3BB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = surfingRefreshControlDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = peiwei.surfingRefreshControlDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F4EEEF471D0A3D5D00FA3BB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = surfingRefreshControlDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = peiwei.surfingRefreshControlDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4EEEF2E1D0A3D5C00FA3BB4 /* Build configuration list for PBXProject "surfingRefreshControlDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4EEEF431D0A3D5D00FA3BB4 /* Debug */,
+				F4EEEF441D0A3D5D00FA3BB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4EEEF451D0A3D5D00FA3BB4 /* Build configuration list for PBXNativeTarget "surfingRefreshControlDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4EEEF461D0A3D5D00FA3BB4 /* Debug */,
+				F4EEEF471D0A3D5D00FA3BB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4EEEF2B1D0A3D5C00FA3BB4 /* Project object */;
+}
