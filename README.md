@@ -69,7 +69,7 @@ Square SurfingRefreshControl output is:
 ![alt tag](http://peiweichen.github.io/outofwebsite/images/squarerefresh.png)
 
 
-# [PaintCode](http://www.paintcodeapp.com/) to generate your startpoints and endpoints without too much hassle:
+### [PaintCode](http://www.paintcodeapp.com/) to generate your startpoints and endpoints without too much hassle:
 
 ![alt tag](http://peiweichen.github.io/outofwebsite/images/paintcodedemo.png)
 
