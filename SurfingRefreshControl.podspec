@@ -2,16 +2,15 @@ Pod::Spec.new do |s|
   s.name         = "SurfingRefreshControl"
   s.version      = "1.0"
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  s.summary      = "Fully customizable pull-to-refresh control inspired by Storehouse iOS app"
-  s.homepage     = "https://github.com/Sufi-Al-Hussaini/SurfingRefreshControl"
+  s.summary      = "Customizable pull-to-refresh control,written in pure Swift"
+  s.homepage     = "https://github.com/peiweichen/SurfingRefreshControl"
   s.author       = { "Peiwei" => "peiwei233@gmail.com" }
-  s.source       = { :git => "https://github.com/Sufi-Al-Hussaini/SurfingRefreshControl.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/peiweichen/SurfingRefreshControl.git", :tag => s.version }
   s.source_files = 'SurfingRefreshControl'
   s.description  = <<-DESC
-                   A fully customizable pull-to-refresh control for iOS inspired by Storehouse iOS app. 
-      You can use any shape through a plist file.
+                   This project is heavily inspired by CBStoreHouseRefreshControl which is Objective-C implemented. SurfingRefreshControl provides you a chance to use pure Swift alternative in your next app.
                    DESC
   s.platform     = :ios, '7.0'
-  s.screenshots  = "https://s3.amazonaws.com/suyu.test/CBStoreHouseRefreshControl1.gif", "https://s3.amazonaws.com/suyu.test/CBStoreHouseRefreshControl2.gif"
+  s.screenshots  = "http://peiweichen.github.io/outofwebsite/gif/surfing.gif", "http://peiweichen.github.io/outofwebsite/gif/storehouse.gif"
   s.requires_arc = true
 end
