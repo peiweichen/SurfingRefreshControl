@@ -27,7 +27,7 @@ class SurfingBarItem: UIView {
     
     func setHorizontalRandomness(horizontalRandomness:Int,dropHeight:CGFloat) {
         let horizontalRandomnessCGFloat = CGFloat(horizontalRandomness)
-        let ramdomNumberInt = Int(arc4random())
+        let ramdomNumberInt = Int(arc4random_uniform(65535))
         let randomRangeNumberCGFloat = CGFloat( ramdomNumberInt%horizontalRandomness*2 )
         self.translationX = -horizontalRandomnessCGFloat + randomRangeNumberCGFloat
     }
