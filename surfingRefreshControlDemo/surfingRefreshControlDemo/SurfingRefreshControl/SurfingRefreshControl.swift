@@ -7,6 +7,35 @@
 //
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 struct SurfingConfigs {
     static let loadingIndividualAnimationTiming = 0.8
     static let barDarkAlpha:CGFloat = 0.4
@@ -20,14 +49,14 @@ struct SurfingConfigs {
 }
 
 enum SurfingRefreshControlState {
-    case Idle
-    case Refreshing
-    case Disappearing
+    case idle
+    case refreshing
+    case disappearing
 }
 
 class SurfingRefreshControl: UIView {
     weak var scrollView:UIScrollView!
-    var state:SurfingRefreshControlState = .Idle
+    var state:SurfingRefreshControlState = .idle
     var barItems:[SurfingBarItem]!
     var displayLink:CADisplayLink?
     var target:AnyObject!
@@ -51,7 +80,7 @@ class SurfingRefreshControl: UIView {
         }
     }
     
-    class func attachToScrollView(scrollView:UIScrollView,target:AnyObject,refreshAction:Selector,plist:String,color:UIColor=UIColor.blackColor(),lineWidth:CGFloat=2,dropHeight:CGFloat=80,scale:CGFloat=1,horizontalRandomness:Int=150,reverseLoadingAnimation:Bool=false,internalAnimationFactor:CGFloat=1.0) -> SurfingRefreshControl{
+    class func attachToScrollView(_ scrollView:UIScrollView,target:AnyObject,refreshAction:Selector,plist:String,color:UIColor=UIColor.black,lineWidth:CGFloat=2,dropHeight:CGFloat=80,scale:CGFloat=1,horizontalRandomness:Int=150,reverseLoadingAnimation:Bool=false,internalAnimationFactor:CGFloat=1.0) -> SurfingRefreshControl{
         
         let refreshControl = SurfingRefreshControl()
         refreshControl.dropHeight = dropHeight
@@ -66,11 +95,11 @@ class SurfingRefreshControl: UIView {
         var width:CGFloat = 0
         var height:CGFloat = 0
         
-        let dataDictionary = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource(plist, ofType: "plist")!)
-        let startPoints = dataDictionary?.objectForKey(SurfingConfigs.startPointKey) as! NSArray
-        let endPoints = dataDictionary?.objectForKey(SurfingConfigs.endPointKey) as! NSArray
+        let dataDictionary = NSDictionary(contentsOfFile: Bundle.main.path(forResource: plist, ofType: "plist")!)
+        let startPoints = dataDictionary?.object(forKey: SurfingConfigs.startPointKey) as! NSArray
+        let endPoints = dataDictionary?.object(forKey: SurfingConfigs.endPointKey) as! NSArray
         
-        for (index,startPointObject) in startPoints.enumerate() {
+        for (index,startPointObject) in startPoints.enumerated() {
             let startPoint = CGPointFromString(startPointObject as! String)
             let endPoint = CGPointFromString(endPoints[index] as! String)
             
@@ -92,59 +121,59 @@ class SurfingRefreshControl: UIView {
         
         var surfingBarItems = [SurfingBarItem]()
         
-        for (index,startPointObject) in startPoints.enumerate() {
+        for (index,startPointObject) in startPoints.enumerated() {
             let startPoint = CGPointFromString(startPointObject as! String)
             let endPoint = CGPointFromString(endPoints[index] as! String)
             let surfingBarItem = SurfingBarItem(frame: refreshControl.frame, startPoint: startPoint, endPoint: endPoint, color: color, lineWidth: lineWidth)
             surfingBarItem.tag = index
-            surfingBarItem.backgroundColor = UIColor.clearColor()
+            surfingBarItem.backgroundColor = UIColor.clear
             surfingBarItem.alpha = 0
             surfingBarItem.setHorizontalRandomness(refreshControl.horizontalRandomness, dropHeight: refreshControl.dropHeight)
             surfingBarItems.append(surfingBarItem)
             refreshControl.addSubview(surfingBarItem)
         }
         refreshControl.barItems = surfingBarItems
-        refreshControl.transform = CGAffineTransformMakeScale(scale, scale)
+        refreshControl.transform = CGAffineTransform(scaleX: scale, y: scale)
         
         return refreshControl
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         if scrollView != self.scrollView {
             return
         }
 
         self.center = CGPoint(x: scrollView.frame.size.width*0.5, y: self.scrollView.contentOffset.y*SurfingConfigs.relativeHeightFactor)
-        if self.state == SurfingRefreshControlState.Idle {
+        if self.state == SurfingRefreshControlState.idle {
             self.updateBarItemsWithProgress(self.surfingBarItemsAnimationProgress)
         }
     }
     
     
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if self.state == .Idle && self.realContentOffsetY < -self.dropHeight {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if self.state == .idle && self.realContentOffsetY < -self.dropHeight {
             if self.surfingBarItemsAnimationProgress == 1 {
-                self.state = .Refreshing
+                self.state = .refreshing
                 var newInsets = self.scrollView.contentInset
                 newInsets.top += self.dropHeight
                 let contentOffset = self.scrollView.contentOffset
                 
-                UIView.animateWithDuration(0, animations: {
+                UIView.animate(withDuration: 0, animations: {
                     self.scrollView.contentInset = newInsets
                     self.scrollView.contentOffset = contentOffset
                 })
                 
-                if self.target.respondsToSelector(self.action) {
-                    self.target.performSelector(self.action, withObject: self)
+                if self.target.responds(to: self.action) {
+                    self.target.perform(self.action, with: self)
                 }
                 self.startLoadingAnimation()
             }
         }
     }
     
-    func updateBarItemsWithProgress(progress:CGFloat) {
-        for (index,barItem) in self.barItems.enumerate() {
+    func updateBarItemsWithProgress(_ progress:CGFloat) {
+        for (index,barItem) in self.barItems.enumerated() {
             
             //internalAnimationFactor: 1 means normal animation, 0.7 cut the animation to 70% compared to normal animation, in this case , we could handle 1-0.7 = 30%.
             
@@ -153,7 +182,7 @@ class SurfingRefreshControl: UIView {
             let endPadding = 1 - self.internalAnimationFactor - startPadding
 
             if (progress == 1 || progress >= 1 - endPadding) {
-                barItem.transform = CGAffineTransformIdentity
+                barItem.transform = CGAffineTransform.identity
                 barItem.alpha = SurfingConfigs.barDarkAlpha
             } else if progress == 0 {
                 barItem.setHorizontalRandomness(self.horizontalRandomness, dropHeight: self.dropHeight)
@@ -167,9 +196,9 @@ class SurfingRefreshControl: UIView {
                 } else {
                     surfingProgress = min(1, (progress - startPadding)/self.internalAnimationFactor)
                 }
-                barItem.transform = CGAffineTransformMakeTranslation(barItem.translationX*(1-surfingProgress), -self.dropHeight*(1-surfingProgress))
-                barItem.transform = CGAffineTransformRotate(barItem.transform, CGFloat(M_PI)*surfingProgress)
-                barItem.transform = CGAffineTransformScale(barItem.transform, surfingProgress, surfingProgress)
+                barItem.transform = CGAffineTransform(translationX: barItem.translationX*(1-surfingProgress), y: -self.dropHeight*(1-surfingProgress))
+                barItem.transform = barItem.transform.rotated(by: CGFloat(M_PI)*surfingProgress)
+                barItem.transform = barItem.transform.scaledBy(x: surfingProgress, y: surfingProgress)
                 barItem.alpha = surfingProgress * SurfingConfigs.barDarkAlpha
             }
         }
@@ -179,35 +208,35 @@ class SurfingRefreshControl: UIView {
         
         //NSRunLoopCommonModes make it possible that animating even when user's dragging scrollView
         if self.reverseLoadingAnimation == true {
-            for (index,barItem) in self.barItems.reverse().enumerate() {
-                self.performSelector(#selector(SurfingRefreshControl.barItemAnimation(_:)), withObject: barItem, afterDelay: Double(index) * SurfingConfigs.loadingTimingOffset, inModes: [NSRunLoopCommonModes])
+            for (index,barItem) in self.barItems.reversed().enumerated() {
+                self.perform(#selector(SurfingRefreshControl.barItemAnimation(_:)), with: barItem, afterDelay: Double(index) * SurfingConfigs.loadingTimingOffset, inModes: [RunLoopMode.commonModes])
             }
         } else {
-            for (index,barItem) in self.barItems.enumerate() {
-                self.performSelector(#selector(SurfingRefreshControl.barItemAnimation(_:)), withObject: barItem, afterDelay: Double(index) * SurfingConfigs.loadingTimingOffset, inModes: [NSRunLoopCommonModes])
+            for (index,barItem) in self.barItems.enumerated() {
+                self.perform(#selector(SurfingRefreshControl.barItemAnimation(_:)), with: barItem, afterDelay: Double(index) * SurfingConfigs.loadingTimingOffset, inModes: [RunLoopMode.commonModes])
             }
         }
     }
     
     func finishLoading() {
-        self.state = .Disappearing
+        self.state = .disappearing
         self.disappearProgress = 0
         var newInset = self.scrollView.contentInset
         newInset.top = self.scrollView.contentInset.top - self.dropHeight
-        UIView.animateWithDuration(SurfingConfigs.disappearDuration,animations:  {
+        UIView.animate(withDuration: SurfingConfigs.disappearDuration,animations:  {
             self.scrollView.contentInset = newInset
-        }) { (finished) in
+        }, completion: { (finished) in
             if finished {
-                self.state = .Idle
-                self.displayLink?.paused = true
+                self.state = .idle
+                self.displayLink?.isPaused = true
                 self.displayLink?.invalidate()
                 self.displayLink = nil
                 self.disappearProgress = 1
             }
-        }
+        }) 
         
         self.displayLink = CADisplayLink(target: self, selector: #selector(SurfingRefreshControl.updateDisappearAnimation))
-        self.displayLink?.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+        self.displayLink?.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
     }
     
     func updateDisappearAnimation() {
@@ -218,11 +247,11 @@ class SurfingRefreshControl: UIView {
         }
     }
     
-    func barItemAnimation(barItem:SurfingBarItem) {
-        if self.state == .Refreshing {
+    func barItemAnimation(_ barItem:SurfingBarItem) {
+        if self.state == .refreshing {
             barItem.alpha = 1
             barItem.layer.removeAllAnimations()
-           UIView.animateWithDuration(SurfingConfigs.loadingIndividualAnimationTiming, animations: {
+           UIView.animate(withDuration: SurfingConfigs.loadingIndividualAnimationTiming, animations: {
                 barItem.alpha = SurfingConfigs.barDarkAlpha
            })
         

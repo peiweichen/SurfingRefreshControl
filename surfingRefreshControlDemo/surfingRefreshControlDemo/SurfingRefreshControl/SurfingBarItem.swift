@@ -10,11 +10,11 @@ import UIKit
 
 class SurfingBarItem: UIView {
     var translationX:CGFloat = 0
-    private var lineWidth:CGFloat = 0
-    private var startPoint:CGPoint = CGPointZero
-    private var endPoint:CGPoint = CGPointZero
-    private var middlePoint:CGPoint = CGPointZero
-    private var color:UIColor = UIColor.whiteColor()
+    fileprivate var lineWidth:CGFloat = 0
+    fileprivate var startPoint:CGPoint = CGPoint.zero
+    fileprivate var endPoint:CGPoint = CGPoint.zero
+    fileprivate var middlePoint:CGPoint = CGPoint.zero
+    fileprivate var color:UIColor = UIColor.white
     
     convenience init(frame:CGRect,startPoint:CGPoint,endPoint:CGPoint,color:UIColor,lineWidth:CGFloat) {
         self.init(frame: frame)
@@ -25,17 +25,17 @@ class SurfingBarItem: UIView {
         self.middlePoint = CGPoint(x: (startPoint.x+endPoint.x)*0.5, y:( startPoint.y+endPoint.y)*0.5)
     }
     
-    func setHorizontalRandomness(horizontalRandomness:Int,dropHeight:CGFloat) {
+    func setHorizontalRandomness(_ horizontalRandomness:Int,dropHeight:CGFloat) {
         let horizontalRandomnessCGFloat = CGFloat(horizontalRandomness)
         let ramdomNumberInt = Int(arc4random_uniform(65535))
         let randomRangeNumberCGFloat = CGFloat( ramdomNumberInt%horizontalRandomness*2 )
         self.translationX = -horizontalRandomnessCGFloat + randomRangeNumberCGFloat
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let bezierPath = UIBezierPath()
-        bezierPath.moveToPoint(self.startPoint)
-        bezierPath.addLineToPoint(self.endPoint)
+        bezierPath.move(to: self.startPoint)
+        bezierPath.addLine(to: self.endPoint)
         self.color.setStroke()
         bezierPath.lineWidth = self.lineWidth
         bezierPath.stroke()
