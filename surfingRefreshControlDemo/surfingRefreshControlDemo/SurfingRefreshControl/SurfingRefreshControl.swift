@@ -244,6 +244,7 @@ class SurfingRefreshControl: UIView {
             //60.0 means this method get called 60 times per second , 60fps
             self.disappearProgress = self.disappearProgress + CGFloat(1/60.0/SurfingConfigs.disappearDuration);
             self.updateBarItemsWithProgress(1 - self.disappearProgress)
+            
         }
     }
     
